@@ -10,25 +10,29 @@
             <li class="active">
 
                 <li>
-                    <a routerLink="/calendario">Calendario</a> <!-- Redirecciono a componente calendario -->
+                    <a [routerLink]="['/calendario']" [routerLinkActive]="['actived']">Calendario</a> <!-- Redirecciono a componente calendario -->
                 </li>
                 <li>
-                    <a routerLink="/consultar-consultorias" routerLinkActive="active" routerLinkActiveOptions="{exact:true}"  >Consultorías</a>
+                    <a [routerLink]="['/consultar-consultorias']" [routerLinkActive]="['actived']"  >Consultorías</a>
                 </li>
                 <li>
-                    <a routerLink="/consultores" routerLinkActive="active"  >Consultores</a>
+                    <a [routerLink]="['/consultores']" [routerLinkActive]="['actived']"  >Facilitadores</a>
                 </li>
                 <li>
-                    <a routerLink="/consultar-emprendimientos" routerLinkActive="active"  >Emprendimientos</a>
+                    <a [routerLink]="['/consultar-emprendimientos']" [routerLinkActive]="['actived']"  >Emprendimientos</a>
                 </li>
                 <li>
-                    <a routerLink="/emprendedores" routerLinkActive="active"  >Emprendedores</a>
+                    <a [routerLink]="['/emprendedores']" [routerLinkActive]="['actived']"  >Emprendedores</a>
                 </li>
+                <li>
+                  <a [routerLink]="['/consultar-usuarios']" [routerLinkActive]="['actived']"  >Atención a Usuario</a>
+              </li>
                 <hr>
                 <ul class="list-unstyled CTAs">
       
                   <li>
-                      <a  routerLink="/login" class="exit" (click)="exit()">Salir</a>
+                    <div routerLink="/login" class="boton"><button class="btn btnE" (click)="exit()"> Salir</button></div>
+   
                   </li>
               </ul>
           </ul>
@@ -47,7 +51,7 @@
       
         <section id="content-wrapper">
             <div class="row">
-              <div class="col-lg-12">
+              <div class="col-lg-12" style="width: 100%;">
                 <router-outlet></router-outlet> <!-- Aqui se ejecutan todos los demás componentes -->
 
               </div>

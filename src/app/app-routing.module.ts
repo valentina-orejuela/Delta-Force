@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PaginaPrincipalComponent } from './components/pagina-principal/pagina-principal.component';
 import { LoginComponent } from './components/login/login.component';
@@ -23,8 +23,7 @@ import { EliminarEmprendimientoComponent } from "./components/eliminar-emprendim
 import { ActualizarEmprendimientoComponent } from "./components/actualizar-emprendimiento/actualizar-emprendimiento.component";
 import { EliminarConsultoriaComponent } from "./components/eliminar-consultoria/eliminar-consultoria.component";
 import { ActualizarConsultoriasComponent } from "./components/actualizar-consultorias/actualizar-consultorias.component";
-
-
+import { ReportesConsultoriasComponent } from "./components/reportes-consultorias/reportes-consultorias.component";
 
 
 
@@ -117,6 +116,9 @@ const routes: Routes = [
   {
     path: 'crear-usuario', component: CrearUsuarioComponent  /* Importo consultar usuario */
   },
+  {
+    path: 'reportes-consultorias', component: ReportesConsultoriasComponent /* Importo reportes consultoría*/
+  },
   
   { /* ¡¡ Debe ser siempre el ultimo !! */
     path: '**', component: Pagina404Component /* El path con '**' significa que cualquier URL desconocida se redirecciona al componente 'Login', aqui se puede colocar el componente de ERROR 404*/
@@ -124,8 +126,9 @@ const routes: Routes = [
 
 ];
 
-@NgModule({
+/* @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
-})
-export class AppRoutingModule { }
+}) */
+export const appRoutingProviders: any[] = [];
+export const routing: ModuleWithProviders = RouterModule.forRoot(routes);

@@ -13,6 +13,7 @@ import { Global } from "./global";
 export class ConsultoriaService{
 
     public url: string;
+    filterConsultoria: '';
 
     constructor(
         private _http: HttpClient
@@ -64,6 +65,11 @@ export class ConsultoriaService{
         let headers = new HttpHeaders().set('Content-Type', 'application/json')
     
         return this._http.put(this.url+'/consultorias/'+consultoria.consecutivo, params, {headers:headers})
+    }
+
+    getConsultoriasCalendar(): Observable<any>{
+        let headers = new HttpHeaders().set('Content-Type', 'application/json');
+        return this._http.get(this.url+'/calendar', {headers:headers})
     }
     
 }
